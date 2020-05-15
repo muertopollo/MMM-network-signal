@@ -16,13 +16,20 @@ Display a solid wifi logo as network signal for MagicMirror<sup>2</sup>
 3. Configure your `~/MagicMirror/config/config.js`:
 
    ```
-   {
-       module: "MMM-network-signal",
-       position: "bottom_right",
-       config: {
-           // Configuration of the module goes here
-       }
-   }
+		{
+			module: "MMM-network-signal",
+			position: "bottom_right",
+			config: {
+		        // Configuration of the module goes here
+				updateInterval: 5000,
+				maxTimeout: 1000,
+				animationSpeed: 250,
+				initialLoadDelay: 3000,
+				server: "1.1.1.1",
+				thresholds: { strong: 50, medium: 150, weak: 500 },
+				showMessage: true,
+			}
+		},
    ```
 
 ## Configuration Options
